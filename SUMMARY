@@ -1,0 +1,1 @@
+一个ColorOS LSPosed 模块，将系统人脸传感器修改为标准 Class 3（强认证）强度，从而让面容解锁能够正常用于应用的 BiometricPrompt。
