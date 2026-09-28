@@ -26,10 +26,10 @@ ColorOS 的人脸传感器向 `system_server` 上报 `4095`。因此当普通应
 
 ## 兼容性
 
-- 系统：ColorOS（OPPO / 一加 / 真我）， LSPosed。
-- 依赖 Xposed API legacy 及以上。
-- 构建环境：AGP 9.3.2、Gradle 9.5.0、compileSdk 37、minSdk 35、targetSdk 37。
-- 仅在oneplus ace3v + coloros 16 测试通过
+- 系统：ColorOS（OPPO / 一加 / 真我），LSPosed。
+- 框架要求：需支持现代 `libxposed API 102`（`io.github.libxposed:api:102.0.0`）的 LSPosed 框架。
+- 构建环境：AGP 9.3.2、Gradle 9.5.0、compileSdk 36、minSdk 35、targetSdk 36。
+- 仅在 oneplus ace3v + coloros 16 测试通过
 
 ## 构建
 
@@ -44,10 +44,9 @@ ColorOS 的人脸传感器向 `system_server` 上报 `4095`。因此当普通应
 ## 安装与使用
 
 1. 安装编译出的 APK（可能需关闭系统签名校验或使用支持的方式安装模块 APK）。
-2. 在 LSPosed 中启用本模块。
-3. 将模块作用域勾选为 **System Framework（系统框架）**。
-4. 重启系统。
-5. 在任意使用 `BiometricPrompt` 的应用中即可看到面容解锁选项。
+2. 在 LSPosed 中启用本模块（固定作用域已声明为系统框架 `system`）。
+3. 首次启用请重启系统；后续覆盖更新模块支持 `system_server` 热重载（`autoHotReload=true`），无需再次重启。
+4. 在任意使用 `BiometricPrompt` 的应用中即可看到面容解锁选项。
 
 ## 说明与免责声明
 
